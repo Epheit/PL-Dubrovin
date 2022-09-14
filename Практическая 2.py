@@ -1,0 +1,18 @@
+p =(4.642*(10**-2))
+print("Число y равно: ", p)
+print("Число x равно: -15.246")
+print("Число z равно: 21")
+import math
+x = float(input("Введите x - "))
+y = float(input("Введите y - "))
+z = float(input("Введите z - "))
+a = (float(y**(-math.sqrt(abs(x)))))
+print(a)
+h = (math.log(a,math.e))
+print(h)
+b = (float(x-(y/2)))
+print(b)
+c = (float(((math.pow(math.sin(math.atan(z)), 2 )))))
+print(c)
+k = h*b+c
+print("Ответ", k)
