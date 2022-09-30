@@ -22,11 +22,11 @@
 #     for i in range(a,b-1,-1):
 #         print(i)
 
-n = int(input())#//////номер 5
-p = 0
-for i in range(1,n+1,1):
-    p+=i**3
-    print(p)
+# n = int(input())#//////номер 5
+# p = 0
+# for i in range(1,n+1,1):
+#     p+=i**3
+#     print(p)
 
 # n = int(input())#//////номер 7
 # p = 1
