@@ -19,6 +19,7 @@
 #     p += s
 # print(p)
 # c = p/n
+# print(c)
 # for k in range(len(a)):
 #   if a[k] == 0:
 #     a[k] = c
