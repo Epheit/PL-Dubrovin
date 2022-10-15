@@ -14,13 +14,14 @@
 # for i in range(n):
 #     a.append(int(input()))
 # print(a)
-# print(a[0])
 # for j in range(len(a)):
 #     s = a[j]
 #     p += s
 # print(p)
 # c = p/n
-# a[0] = c
+# for k in range(len(a)):
+#   if a[k] == 0:
+#     a[k] = c
 # print(a)
 
 # #Вариант 2
