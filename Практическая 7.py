@@ -7,23 +7,20 @@
 # h = float(input('Введите длину высоты к стороне '))
 # print('Площадь правильного шестиугольника равна: ', s(a,h))
 
-# #№2
-# import math
-# def s(a1, a2, a3, a4, a5, a6,  angle1, angle2, angle3 ):
-#     s1 = (a1 * a2 *math.sin(angle1))
-#     s2 = (a3 * a4 * math.sin(angle2))
-#     s3 = (a5 * a6 * math.sin(angle3))
-#     return(s1, s2, s3)
-# a1 = float(input())
-# a2 = float(input())
-# a3 = float(input())
-# a4 = float(input())
-# a5 = float(input())
-# a6 = float(input())
-# angle1 = int(input())
-# angle2 = int(input())
-# angle3 = int(input())
-# print(s(a1, a2, a3, a4, a5, a6,  angle1, angle2, angle3))
+#№2
+import math
+def s(a1, a2, a3, a4, a5, a6):
+    s1 = (a1 * a2) 
+    s2 = (a3 * a4)
+    s3 = (a5 * a6) 
+    return(s1, s2, s3)
+a1 = float(input())
+a2 = float(input())
+a3 = float(input())
+a4 = float(input())
+a5 = float(input())
+a6 = float(input())
+print(s(a1, a2, a3, a4, a5, a6))
 
 # #Вариант 3
 # #№1
