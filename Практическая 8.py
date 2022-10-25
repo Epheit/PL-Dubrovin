@@ -1,23 +1,23 @@
 #Вариант 1
 #№1
-n = int(input())
-a = []
-f = 0
-q = 0
-for i in range(n):
-    c = input().split()
-    for i in range(len(c)):
-        c[i] = int(c[i])
-    a.append(c)
-print(a)
-for p in range(len(a)):
-    for k in range(len(a[p])):
-        if k > p:
-            if a[p][k] >=0:
-                print(a[p][k])
-                f += 1
-                q += (a[p][k])
-print(f, q)
+# n = int(input())
+# a = []
+# f = 0
+# q = 0
+# for i in range(n):
+#     c = input().split()
+#     for i in range(len(c)):
+#         c[i] = int(c[i])
+#     a.append(c)
+# print(a)
+# for p in range(len(a)):
+#     for k in range(len(a[p])):
+#         if k > p:
+#             if a[p][k] >=0:
+#                 print(a[p][k])
+#                 f += 1
+#                 q += (a[p][k])
+# print(f, q)
 
 #№2
 # n = int(input())
