@@ -40,12 +40,12 @@
 # print(k)
 # f2.write(str(k))
 
-f1 = open('C:/Users/User/Documents/Dubrovin K/PL-Dubrovin/kPr9/vvod.txt', 'r')
-f2 = open('C:/Users/User/Documents/Dubrovin K/PL-Dubrovin/kPr9/vivod.txt', 'w')
-k = [[int(n)for n in x.split()]for x in f1]
-for i in range(len(k)):
-    for j in range(len(k[i])):
-        if k[i][j] %2 ==0: k[i][j] =0
-        else: k[i][j] = 1
-print(k)
-f2.write(str(k))
+# f1 = open('C:/Users/User/Documents/Dubrovin K/PL-Dubrovin/kPr9/vvod.txt', 'r')
+# f2 = open('C:/Users/User/Documents/Dubrovin K/PL-Dubrovin/kPr9/vivod.txt', 'w')
+# k = [[int(n)for n in x.split()]for x in f1]
+# for i in range(len(k)):
+#     for j in range(len(k[i])):
+#         if k[i][j] %2 ==0: k[i][j] =0
+#         else: k[i][j] = 1
+# print(k)
+# f2.write(str(k))
