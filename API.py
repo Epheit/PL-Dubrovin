@@ -1,3 +1,8 @@
+#Задание №62 Проверка доступности сайта с уведомлением. 
+# Реализовать программу которая будет проверять доступность сайтов с заданным интервалом. 
+# Количество сайтов неограничено. 
+# Интервал проверки для каждого сайта- заданный польователем(они могут быть для каждого сайта разные).
+
 #Module libs A
 import requests
 from tkinter import *
@@ -8,71 +13,365 @@ import time
 
 #Module core A
 def clicked1():
-        for i in range (int(txt16.get())):
-                response1 = requests.get(f'{txt1.get()}', timeout = (int(txt6.get())))
-                print(response1.status_code)
-                if response1.status_code >=100 and response1.status_code < 400:
-                        lbl12['text'] = 'Сайт доступен'
-                        lbl12['fg'] = 'green'
-                else:
-                        lbl12['text'] = 'Сайт недоступен'
-                        lbl12['fg'] = 'red'
-                lbl18['text'] = i+1
-                time.sleep(int(txt11.get()))
+        try: 
+                int(txt16.get())
+                for i in range (int(txt16.get())):
+                        try:
+                                int(txt6.get())
+                                try:
+                                        response1 = requests.get(f'{txt1.get()}', timeout = (int(txt6.get())))
+                                        print(response1.status_code)
+                                        if response1.status_code >=100 and response1.status_code < 400:
+                                                lbl12['text'] = 'Сайт доступен'
+                                                lbl12['fg'] = 'green'
+                                        else:
+                                                lbl12['text'] = 'Сайт недоступен'
+                                                lbl12['fg'] = 'red'                      
+                                except:
+                                        lbl12['text'] = 'Сайт недоступен'
+                                        lbl12['fg'] = 'red'
+                        except:
+                                try:
+                                        response1 = requests.get(f'{txt1.get()}', timeout = 1 )
+                                        print(response1.status_code)
+                                        if response1.status_code >=100 and response1.status_code < 400:
+                                                lbl12['text'] = 'Сайт доступен'
+                                                lbl12['fg'] = 'green'
+                                        else:
+                                                bl12['text'] = 'Сайт недоступен'
+                                                lbl12['fg'] = 'red'                      
+                                except:
+                                        lbl12['text'] = 'Сайт недоступен'
+                                        lbl12['fg'] = 'red'
+                        lbl18['text'] = i+1
+                        try:
+                                time.sleep(int(txt11.get()))
+                        except:
+                                time.sleep(1)
+        except:
+                for i in range (1):
+                        try:
+                                int(txt6.get())
+                                try:
+                                        response1 = requests.get(f'{txt1.get()}', timeout = (int(txt6.get())))
+                                        print(response1.status_code)
+                                        if response1.status_code >=100 and response1.status_code < 400:
+                                                lbl12['text'] = 'Сайт доступен'
+                                                lbl12['fg'] = 'green'
+                                        else:
+                                                lbl12['text'] = 'Сайт недоступен'
+                                                lbl12['fg'] = 'red'                      
+                                except:
+                                        lbl12['text'] = 'Сайт недоступен'
+                                        lbl12['fg'] = 'red'
+                        except:
+                                try:
+                                        response1 = requests.get(f'{txt1.get()}', timeout = 1 )
+                                        print(response1.status_code)
+                                        if response1.status_code >=100 and response1.status_code < 400:
+                                                lbl12['text'] = 'Сайт доступен'
+                                                lbl12['fg'] = 'green'
+                                        else:
+                                                bl12['text'] = 'Сайт недоступен'
+                                                lbl12['fg'] = 'red'                      
+                                except:
+                                        lbl12['text'] = 'Сайт недоступен'
+                                        lbl12['fg'] = 'red'
+                        lbl18['text'] = i+1
+                        try:
+                                time.sleep(int(txt11.get()))
+                        except:
+                                time.sleep(1)
+
 def clicked2():
-        for i in range (int(txt16.get())):
-                response2 = requests.get(f'{txt2.get()}', timeout = (int(txt7.get())))
-                print(response2.status_code)
-                if response2.status_code >=100 and response2.status_code < 400:
-                        lbl13['text'] = 'Сайт доступен'
-                        lbl13['fg'] = 'green'
-                else:
-                        lbl13['text'] = 'Сайт недоступен'
-                        lbl13['fg'] = 'red'
-                lbl19['text'] = i+1
-                time.sleep(int(txt12.get()))
+        try: 
+                int(txt16.get())
+                for i in range (int(txt16.get())):
+                        try:
+                                int(txt7.get())  
+                                try:
+                                        response2 = requests.get(f'{txt2.get()}', timeout = (int(txt7.get())))
+                                        print(response2.status_code)
+                                        if response2.status_code >=100 and response2.status_code < 400:
+                                                lbl13['text'] = 'Сайт доступен'
+                                                lbl13['fg'] = 'green'
+                                        else:
+                                                lbl13['text'] = 'Сайт недоступен'
+                                                lbl13['fg'] = 'red'
+                                except:
+                                        lbl13['text'] = 'Сайт недоступен'
+                                        lbl13['fg'] = 'red'
+                        except:
+                                try:
+                                        response2 = requests.get(f'{txt2.get()}', timeout = 1 )
+                                        print(response2.status_code)
+                                        if response2.status_code >=100 and response2.status_code < 400:
+                                                lbl13['text'] = 'Сайт доступен'
+                                                lbl13['fg'] = 'green'
+                                        else:
+                                                lbl13['text'] = 'Сайт недоступен'
+                                                lbl13['fg'] = 'red'
+                                except:
+                                        lbl13['text'] = 'Сайт недоступен'
+                                        lbl13['fg'] = 'red'
+                        lbl19['text'] = i+1
+                        try:
+                                time.sleep(int(txt12.get()))
+                        except:
+                                time.sleep(1)
+        except:
+                for i in range (1):
+                        try:
+                                int(txt7.get())  
+                                try:
+                                        response2 = requests.get(f'{txt2.get()}', timeout = (int(txt7.get())))
+                                        print(response2.status_code)
+                                        if response2.status_code >=100 and response2.status_code < 400:
+                                                lbl13['text'] = 'Сайт доступен'
+                                                lbl13['fg'] = 'green'
+                                        else:
+                                                lbl13['text'] = 'Сайт недоступен'
+                                                lbl13['fg'] = 'red'
+                                except:
+                                        lbl13['text'] = 'Сайт недоступен'
+                                        lbl13['fg'] = 'red'
+                        except:
+                                try:
+                                        response2 = requests.get(f'{txt2.get()}', timeout = 1 )
+                                        print(response2.status_code)
+                                        if response2.status_code >=100 and response2.status_code < 400:
+                                                lbl13['text'] = 'Сайт доступен'
+                                                lbl13['fg'] = 'green'
+                                        else:
+                                                lbl13['text'] = 'Сайт недоступен'
+                                                lbl13['fg'] = 'red'
+                                except:
+                                        lbl13['text'] = 'Сайт недоступен'
+                                        lbl13['fg'] = 'red'
+                        lbl19['text'] = i+1
+                        try:
+                                time.sleep(int(txt12.get()))
+                        except:
+                                time.sleep(1)
+
+                
 def clicked3():
-        for i in range (int(txt16.get())):
-                response3 = requests.get(f'{txt3.get()}', timeout = (int(txt8.get())))
-                print(response3.status_code)
-                if response3.status_code >=100 and response3.status_code < 400:
-                        lbl14['text'] = 'Сайт доступен'
-                        lbl14['fg'] = 'green'
-                else:
-                        lbl14['text'] = 'Сайт недоступен'
-                        lbl14['fg'] = 'red'
-                lbl20['text'] = i+1
-                time.sleep(int(txt13.get()))
+        try: 
+                int(txt16.get())
+                for i in range (int(txt16.get())):
+                        try:
+                                int(txt8.get())
+                                try:
+                                        response3 = requests.get(f'{txt3.get()}', timeout = (int(txt8.get())))
+                                        print(response3.status_code)
+                                        if response3.status_code >=100 and response3.status_code < 400:
+                                                lbl14['text'] = 'Сайт доступен'
+                                                lbl14['fg'] = 'green'
+                                        else:
+                                                lbl14['text'] = 'Сайт недоступен'
+                                                lbl14['fg'] = 'red'
+                                except:
+                                        lbl14['text'] = 'Сайт недоступен'
+                                        lbl14['fg'] = 'red'
+                        except:
+                                try:
+                                        response3 = requests.get(f'{txt3.get()}', timeout = 1 )
+                                        print(response3.status_code)
+                                        if response3.status_code >=100 and response3.status_code < 400:
+                                                lbl14['text'] = 'Сайт доступен'
+                                                lbl14['fg'] = 'green'
+                                        else:
+                                                lbl14['text'] = 'Сайт недоступен'
+                                                lbl14['fg'] = 'red'
+                                except:
+                                        bl14['text'] = 'Сайт недоступен'
+                                        lbl14['fg'] = 'red'
+                        lbl20['text'] = i+1
+                        try:
+                                time.sleep(int(txt13.get()))
+                        except:
+                                time.sleep(1)
+        except:
+                for i in range (1):
+                        try:
+                                int(txt8.get())
+                                try:
+                                        response3 = requests.get(f'{txt3.get()}', timeout = (int(txt8.get())))
+                                        print(response3.status_code)
+                                        if response3.status_code >=100 and response3.status_code < 400:
+                                                lbl14['text'] = 'Сайт доступен'
+                                                lbl14['fg'] = 'green'
+                                        else:
+                                                lbl14['text'] = 'Сайт недоступен'
+                                                lbl14['fg'] = 'red'
+                                except:
+                                        lbl14['text'] = 'Сайт недоступен'
+                                        lbl14['fg'] = 'red'
+                        except:
+                                try:
+                                        response3 = requests.get(f'{txt3.get()}', timeout = 1 )
+                                        print(response3.status_code)
+                                        if response3.status_code >=100 and response3.status_code < 400:
+                                                lbl14['text'] = 'Сайт доступен'
+                                                lbl14['fg'] = 'green'
+                                        else:
+                                                lbl14['text'] = 'Сайт недоступен'
+                                                lbl14['fg'] = 'red'
+                                except:
+                                        bl14['text'] = 'Сайт недоступен'
+                                        lbl14['fg'] = 'red'
+                        lbl20['text'] = i+1
+                        try:
+                                time.sleep(int(txt13.get()))
+                        except:
+                                time.sleep(1)
+
 def clicked4():
-        for i in range (int(txt16.get())):
-                response4 = requests.get(f'{txt4.get()}', timeout = (int(txt9.get())))
-                print(response4.status_code)
-                if response4.status_code >=100 and response4.status_code < 400:
-                        lbl15['text'] = 'Сайт доступен'
-                        lbl15['fg'] = 'green'
-                else:
-                        lbl15['text'] = 'Сайт недоступен'
-                        lbl15['fg'] = 'red'
-                lbl21['text'] = i+1
-                time.sleep(int(txt14.get()))
+        try:
+                int(txt16.get())
+                for i in range (int(txt16.get())):
+                        try:
+                                int(txt9.get())
+                                try:
+                                        response4 = requests.get(f'{txt4.get()}', timeout = (int(txt9.get())))
+                                        print(response4.status_code)
+                                        if response4.status_code >=100 and response4.status_code < 400:
+                                                lbl15['text'] = 'Сайт доступен'
+                                                lbl15['fg'] = 'green'
+                                        else:
+                                                lbl15['text'] = 'Сайт недоступен'
+                                                lbl15['fg'] = 'red'
+                                except:
+                                        lbl15['text'] = 'Сайт недоступен'
+                                        lbl15['fg'] = 'red'
+                        except:
+                                try:
+                                        response4 = requests.get(f'{txt4.get()}', timeout = 1 )
+                                        print(response4.status_code)
+                                        if response4.status_code >=100 and response4.status_code < 400:
+                                                lbl15['text'] = 'Сайт доступен'
+                                                lbl15['fg'] = 'green'
+                                        else:
+                                                lbl15['text'] = 'Сайт недоступен'
+                                                lbl15['fg'] = 'red'
+                                except:
+                                        lbl15['text'] = 'Сайт недоступен'
+                                        lbl15['fg'] = 'red'
+                        lbl21['text'] = i+1
+                        try:
+                                time.sleep(int(txt14.get()))
+                        except:
+                                time.sleep(1)
+        except:
+                for i in range (1):
+                        try:
+                                int(txt9.get())
+                                try:
+                                        response4 = requests.get(f'{txt4.get()}', timeout = (int(txt9.get())))
+                                        print(response4.status_code)
+                                        if response4.status_code >=100 and response4.status_code < 400:
+                                                lbl15['text'] = 'Сайт доступен'
+                                                lbl15['fg'] = 'green'
+                                        else:
+                                                lbl15['text'] = 'Сайт недоступен'
+                                                lbl15['fg'] = 'red'
+                                except:
+                                        lbl15['text'] = 'Сайт недоступен'
+                                        lbl15['fg'] = 'red'
+                        except:
+                                try:
+                                        response4 = requests.get(f'{txt4.get()}', timeout = 1 )
+                                        print(response4.status_code)
+                                        if response4.status_code >=100 and response4.status_code < 400:
+                                                lbl15['text'] = 'Сайт доступен'
+                                                lbl15['fg'] = 'green'
+                                        else:
+                                                lbl15['text'] = 'Сайт недоступен'
+                                                lbl15['fg'] = 'red'
+                                except:
+                                        lbl15['text'] = 'Сайт недоступен'
+                                        lbl15['fg'] = 'red'
+                        lbl21['text'] = i+1
+                        try:
+                                time.sleep(int(txt14.get()))
+                        except:
+                                time.sleep(1)
+                
 def clicked5():
-        for i in range (int(txt16.get())):
-                response5 = requests.get(f'{txt5.get()}', timeout = (int(txt10.get())))
-                print(response5.status_code)
-                if response5.status_code >=100 and response5.status_code < 400:
-                        lbl16['text'] = 'Сайт доступен'
-                        lbl16['fg'] = 'green'
-                else:
-                        lbl16['text'] = 'Сайт недоступен'
-                        lbl16['fg'] = 'red'
-                lbl22['text'] = i+1
-                time.sleep(int(txt15.get()))
+        try:
+                int(txt16.get())
+                for i in range (int(txt16.get())):
+                        try:
+                                int(txt10.get())
+                                try:
+                                        response5 = requests.get(f'{txt5.get()}', timeout = (int(txt10.get())))
+                                        print(response5.status_code)
+                                        if response5.status_code >=100 and response5.status_code < 400:
+                                                lbl16['text'] = 'Сайт доступен'
+                                                lbl16['fg'] = 'green'
+                                        else:
+                                                lbl16['text'] = 'Сайт недоступен'
+                                                lbl16['fg'] = 'red'
+                                except:
+                                        lbl16['text'] = 'Сайт недоступен'
+                                        lbl16['fg'] = 'red'
+                        except:
+                                try:
+                                        response5 = requests.get(f'{txt5.get()}', timeout = 1 )
+                                        print(response5.status_code)
+                                        if response5.status_code >=100 and response5.status_code < 400:
+                                                lbl16['text'] = 'Сайт доступен'
+                                                lbl16['fg'] = 'green'
+                                        else:
+                                                lbl16['text'] = 'Сайт недоступен'
+                                                lbl16['fg'] = 'red'
+                                except:
+                                        lbl16['text'] = 'Сайт недоступен'
+                                        lbl16['fg'] = 'red'
+                        lbl22['text'] = i+1
+                        try:
+                                time.sleep(int(txt15.get()))
+                        except:
+                                time.sleep(1)
+        except:
+                for i in range (1):
+                        try:
+                                int(txt10.get())
+                                try:
+                                        response5 = requests.get(f'{txt5.get()}', timeout = (int(txt10.get())))
+                                        print(response5.status_code)
+                                        if response5.status_code >=100 and response5.status_code < 400:
+                                                lbl16['text'] = 'Сайт доступен'
+                                                lbl16['fg'] = 'green'
+                                        else:
+                                                lbl16['text'] = 'Сайт недоступен'
+                                                lbl16['fg'] = 'red'
+                                except:
+                                        lbl16['text'] = 'Сайт недоступен'
+                                        lbl16['fg'] = 'red'
+                        except:
+                                try:
+                                        response5 = requests.get(f'{txt5.get()}', timeout = 1 )
+                                        print(response5.status_code)
+                                        if response5.status_code >=100 and response5.status_code < 400:
+                                                lbl16['text'] = 'Сайт доступен'
+                                                lbl16['fg'] = 'green'
+                                        else:
+                                                lbl16['text'] = 'Сайт недоступен'
+                                                lbl16['fg'] = 'red'
+                                except:
+                                        lbl16['text'] = 'Сайт недоступен'
+                                        lbl16['fg'] = 'red'
+                        lbl22['text'] = i+1
+                        try:
+                                time.sleep(int(txt15.get()))
+                        except:
+                                time.sleep(1)
 
 #Module core B
 def clicked6():
         return(clicked1(), clicked2(), clicked3(), clicked4(), clicked5())
         
-
 #Module int A
 window = Tk()
 window.title("Дубровин Константин УБ-23")
@@ -87,27 +386,27 @@ lbl2 = Label(window, text = '1. ')
 lbl2.grid(column = 1, row = 2)
 txt1 = Entry(window ,width = 30)
 txt1.grid(column = 2, row = 2)
-txt1.insert(0, 'https://www.google.ru')
+txt1.insert(0, 'https://www.onlinegdb.com/')
 lbl3 = Label(window, text = '2. ') 
 lbl3.grid(column = 1, row = 3)
 txt2 = Entry(window ,width = 30)
 txt2.grid(column = 2, row = 3)
-txt2.insert(0, 'https://www.google.ru')
+txt2.insert(0, 'https://www.onlinegdb.com/')
 lbl4 = Label(window, text = '3. ') 
 lbl4.grid(column = 1, row = 4)
 txt3 = Entry(window ,width = 30)
 txt3.grid(column = 2, row = 4)
-txt3.insert(0, 'https://www.google.ru')
+txt3.insert(0, 'https://www.onlinegdb.com/')
 lbl5 = Label(window, text = '4. ') 
 lbl5.grid(column = 1, row = 5)
 txt4 = Entry(window ,width = 30)
 txt4.grid(column = 2, row = 5)
-txt4.insert(0, 'https://www.google.ru')
+txt4.insert(0, 'https://www.onlinegdb.com/')
 lbl6 = Label(window, text = '5. ') 
 lbl6.grid(column = 1, row = 6)
 txt5 = Entry(window ,width = 30)
 txt5.grid(column = 2, row = 6)
-txt5.insert(0, 'https://www.google.ru')
+txt5.insert(0, 'https://www.onlinegdb.com/')
 
 #Module int C
 lbl7 = Label(window, text = '_____________________________________________')
@@ -200,17 +499,3 @@ lbl22.grid(column = 7, row = 6)
 
 
 window.mainloop()
-
-
-# if response1.status_code >=100 and response1.status_code <200:
-#         mb.showinfo('Состояние сайта № *:' , 'Код состояния сайта 1XX - Информационный' )
-# if response1.status_code >=200 and response1.status_code <300:
-#         mb.showinfo('Состояние сайта № *:' , 'Код состояния сайта 2XX - Успех' )
-# if response1.status_code >=300 and response1.status_code <400:
-#         mb.showinfo('Состояние сайта № *:' , 'Код состояния сайта 3XX - Перенаправление' )
-# if response1.status_code >=400 and response1.status_code <500:
-#         mb.showinfo('Состояние сайта № *:' , 'Код состояния сайта 4XX - Ошибка клиента' )
-# if response1.status_code >=500 and response1.status_code <600:
-#         mb.showinfo('Состояние сайта № *:' , 'Код состояния сайта 5XX - Ошибка сервера' )
-# else:
-#         mb.showinfo('Ошибка' , 'Ошибка, такого кода состояния не существует.' )
